@@ -38,7 +38,7 @@ The mean total number of steps per day is 10766.1886792 and the median is 10765.
 
 ## What is the average daily activity pattern?
 
-## Calculating Daily Average Steps by Interval
+### Calculating Daily Average Steps by Interval
 
 Preparing dataset for time series plotting: 
 
@@ -164,7 +164,7 @@ Panel plot comparing average daily steps per interval for weekdays vs. weekends.
 ```r
 weeklyavgs <- summarize(group_by(activity_filled, dayclass, interval), steps = mean(steps, na.rm = TRUE))
 library(lattice)
-xyplot(steps ~ interval | dayclass, data = activity_filled, layout = c(1,2), type ="l")
+xyplot(steps ~ interval | dayclass, data = weeklyavgs, layout = c(1,2), type ="l")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 

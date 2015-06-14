@@ -137,7 +137,7 @@ Panel plot comparing average daily steps per interval for weekdays vs. weekends.
 ```{r}
 weeklyavgs <- summarize(group_by(activity_filled, dayclass, interval), steps = mean(steps, na.rm = TRUE))
 library(lattice)
-xyplot(steps ~ interval | dayclass, data = activity_filled, layout = c(1,2), type ="l")
+xyplot(steps ~ interval | dayclass, data = weeklyavgs, layout = c(1,2), type ="l")
 ```
 
 
